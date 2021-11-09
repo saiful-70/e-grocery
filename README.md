@@ -1,5 +1,6 @@
 # e-Grocery
-<p>E-grocery is mainly an online grocery store</p>
+
+<p>An online store created by PHP and MySQL</p>
 
 </br>
 
@@ -15,19 +16,20 @@
 
 ## Run on your local server
 
-* ### [Click to download the zip file! ](https://github.com/saiful-70/e-grocery/archive/refs/heads/main.zip)(file size is about 30mb)
+- ### [Click to download the zip file! ](https://github.com/saiful-70/e-grocery/archive/refs/heads/main.zip)(file size is about 30mb)
 
-* Extract the zip file
-* Rename the extracted folder to __'e-grocery'__
-* Move the folder to __'htdocs'__
-* Start __'apache'__ and __'mysql'__ server
-* Create a database named __'e-grocery'__
-* Here import database from __'/data/e-grocery.sql'__
-* Now your project is ready
-* Go to __https://localhost/e-grocery__ and see the output
-* For database management go to __https://localhost/e-grocery/admin__ and take some __CRUD__ operation.
+- Extract the zip file
+- Rename the extracted folder to **'e-grocery'**
+- Move the folder to **'htdocs'**
+- Start **'apache'** and **'mysql'** server
+- Create a database named **'e-grocery'**
+- Here import database from **'/data/e-grocery.sql'**
+- Now your project is ready
+- Go to **https://localhost/e-grocery** and see the output
+- For database management go to **https://localhost/e-grocery/admin** and take some **CRUD** operation.
 
 ## Tools used
-* __BOOTSTRAP__ for layout and some tools
-* __MYSQL__ for database
-* __PHP__ as backend language
+
+- **BOOTSTRAP** for layout and some tools
+- **MYSQL** for database
+- **PHP** as backend language
