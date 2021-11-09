@@ -1,11 +1,12 @@
 <?php
+session_start();
 ob_start();
 // Include config file
 require_once "./admin/config.php";
  
 // Define variables and initialize with empty values
-$image = $name = $email = $password = "";
-$image_err = $name_err = $email_err = $password_err = "";
+$image = $name = $username = $password = "";
+$image_err = $name_err = $username_err = $password_err = "";
 
  
 // Processing form data when form is submitted
@@ -18,12 +19,12 @@ if(isset($_POST['submit'])){
         $name = $input_name;
     }
     
-    // Validate email
-    $input_email = trim($_POST["email"]);
-    if(empty($input_email)){
-        $email_err = "Please enter an email.";     
+    // Validate username
+    $input_username = trim($_POST["username"]);
+    if(empty($input_username)){
+        $username_err = "Please enter an username.";     
     } else{
-        $email = $input_email;
+        $username = $input_username;
     }
     
     // Validate password
@@ -36,7 +37,7 @@ if(isset($_POST['submit'])){
     
     
     // Check input errors before inserting in database
-    if(empty($name_err) && empty($email_err) && empty($password_err)){
+    if(empty($name_err) && empty($username_err) && empty($password_err)){
         // image validation
         $imagetype = array(image_type_to_mime_type(IMAGETYPE_GIF), image_type_to_mime_type(IMAGETYPE_JPEG), image_type_to_mime_type(IMAGETYPE_PNG));
 
@@ -63,8 +64,9 @@ if(isset($_POST['submit'])){
             }
         }
         // Prepare an insert statement
-        $sql = "INSERT INTO users (image, name, email, password) VALUES ('$image', '$name', '$email', '$password')";
+        $sql = "INSERT INTO users (image, name, username, password) VALUES ('$image', '$name', '$username', '$password')";
         if (mysqli_query($link, $sql)) {
+            $_SESSION["username"] = $username;
             echo '<meta http-equiv="refresh" content="0; URL=index.php">';
         } else {
             echo "Error: " . $sql . ":-" . mysqli_error($link);
@@ -167,10 +169,10 @@ if(isset($_POST['submit'])){
                     <input type="text" name="name" class="form-control" value="<?php echo $name; ?>" >
                     <span class="help-block text-danger"><?php echo $name_err;?></span>
                 </div>
-                <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
+                <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                     <label class="font-weight-bold">Email</label>
-                    <input type="email" name="email" class="form-control" value="<?php echo $email; ?>" >
-                    <span class="help-block text-danger"><?php echo $email_err;?></span>
+                    <input type="email" name="username" class="form-control" value="<?php echo $username; ?>" >
+                    <span class="help-block text-danger"><?php echo $username_err;?></span>
                 </div>
                 <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                     <label class="font-weight-bold">Password</label>

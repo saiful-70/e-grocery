@@ -1,6 +1,8 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- icon font -->
     <script src="https://use.fontawesome.com/c0bbe922da.js"></script>
@@ -21,6 +23,7 @@
 </head>
 
 <body>
+
     <!-- Nav Bar -->
     <div class="container-fluid">
         <div class="row">
@@ -35,12 +38,36 @@
                         <li class="navbar__item"> <a href="#products" class="navbar__item--link"> Products </a> </li>
                         <li class="navbar__item"> <a href="#about" class="navbar__item--link"> About </a> </li>
                         <li class="navbar__item"> <a href="#contact" class="navbar__item--link"> Contact </a> </li>
-                        <li class="navbar__item">
-                            <a href="register.php" class="navbar__item--link" target="_blank"> Register </a>
-                        </li>
-                        <li class="navbar__item" >
-                            <a href="admin" class="navbar__item--link" target="_blank"> Admin? </a>
-                        </li>
+                        <?php 
+
+                            $destroySessionFlag = filter_input(INPUT_POST, 'destroySession');
+                            if ($destroySessionFlag == 1) {
+                                session_destroy();
+                                header("Location: index.php");
+                                exit();
+                            }
+                            if(isset($_SESSION["username"])) {
+
+                                echo '<li class="navbar__item">';
+                                echo    '<a href="#" class="navbar__item--link">' . $_SESSION["username"] . '</a>';
+                                echo '</li>';
+
+                                echo '<li class="navbar__item">';
+                                echo '<form action="" method="POST">';
+                                    echo '<input type="hidden" name="destroySession" value="1">';
+                                    echo '<input type="submit" value="Log out" class="btn-logout"/>';
+                                echo '</form>';
+                                echo '</li>';
+                                
+                            } else {
+                                echo '<li class="navbar__item">';
+                            echo '<a href="login.php" class="navbar__item--link"> Login </a>';
+                        echo '</li>';
+                        echo '<li class="navbar__item" >';
+                            echo '<a href="admin" class="navbar__item--link" target="_blank"> Admin? </a>';
+                        echo '</li>';
+                            }
+                        ?>
                     </ul>
                 </div>
             </nav>
@@ -83,6 +110,7 @@
       </table>
       </div>
       <div class="modal-footer">
+      <a href="order.php" type="button" class="btn-logout">Confirm Order</a>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -100,8 +128,9 @@
             <span class="head-span"><i class="fa fa-check-circle" aria-hidden="true"></i>
                 Vegetables.</span>
             <span class="head-span"><i class="fa fa-check-circle" aria-hidden="true"></i> Fruits.</span>
-            <a href="#products" class="btn">
-                Buy Now <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <a href="register.php" class="btn" target="_blank">
+                Sign Up Now 
+                <!-- <i class="fa fa-shopping-cart" aria-hidden="true"></i> -->
             </a>
         </h1>
     </header>
@@ -168,7 +197,7 @@
             <div class="row">
                 <div class="col">
                     <h2 class="heading-secondary">
-                        Our Products
+                        Popular Products
                     </h2>
                 </div>
             </div>

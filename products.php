@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+    // Include config file
+    require_once "./admin/config.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +30,7 @@
         <div class="row">
             <nav class="nav">
                 <div class="col col-md-3 logo">
-                <a href="#"><span>e</span>-Grocery</a>
+                <a href="index.php"><span>e</span>-Grocery</a>
                 </div>
                 <div class="col col-md-9">
                     <ul class="nav-bar">
@@ -34,10 +39,10 @@
                         <li class="navbar__item"> <a href="index.php#about" class="navbar__item--link"> About</a> </li>
                         <li class="navbar__item"> <a href="#contact" class="navbar__item--link"> Contact </a> </li>
                         <li class="navbar__item" >
-                            <a href="register.php" class="navbar__item--link" target="_blank" > Register </a>
-                        </li>
-                        <li class="navbar__item" >
-                            <a href="admin" class="navbar__item--link" target="_blank"> Admin? </a>
+                            <form action="" method="post">
+                                <input type="text" name="search" class="border border-4 py-1 border-success">
+                                <input type="submit" name="submit" value="Search" class="btn btn-success">
+                            </form>
                         </li>
                     </ul>
                 </div>
@@ -81,6 +86,7 @@
       </table>
       </div>
       <div class="modal-footer">
+        <a href="order.php" type="button" class="btn-logout">Confirm Order</a>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -91,12 +97,17 @@
     <section class="products all-products" id="products">
         <div class="container">
             <div class="row">
-
                 <?php
-                    // Include config file
-                    require_once "./admin/config.php";
+                $search_value = '';
                     // Attempt select query execution
-                    $sql = "SELECT * FROM products";
+                    if(isset($_POST["search"])) {
+                        $search_value = $_POST["search"];
+                    }
+                    if($search_value != '') {
+                        $sql="SELECT * from products where id like '%$search_value%'";
+                    } else {
+                        $sql = "SELECT * FROM products";
+                    }
                     if($result = mysqli_query($link, $sql)) {
                         if(mysqli_num_rows($result) > 0){
                             while($row = mysqli_fetch_array($result)){
@@ -131,6 +142,7 @@
             </div>
         </div>
     </section>
+
 
     <footer class="footer" id="contact">
         <div class="container">

@@ -57,10 +57,10 @@
                                     echo "<tr>";
                                         echo "<td>" . '<img src="./uploads/users/' . $row['image'] . '" alt="' . $row['image'] . '" class="user-image">' . "</td>";
                                         echo "<td>" . $row['name'] . "</td>";
-                                        echo "<td>" . $row['email'] . "</td>";
+                                        echo "<td>" . $row['username'] . "</td>";
                                         echo "<td>" . $row['password'] . "</td>";
                                         echo "<td>";
-                                        echo '<a href="delete-user.php?email=' . $row['email'] . '" class="btn btn-sm btn-danger">Delete</a>';
+                                        echo '<a href="delete-user.php?email=' . $row['username'] . '" class="btn btn-sm btn-danger">Delete</a>';
                                         echo "</td>";
                                     echo "</tr>";
                                 }
