@@ -283,7 +283,7 @@ session_start();
                 
                 <div class="col-md-2">
                     <div class="person">
-                        <img class="person-image" src="./images/avatar/saiful.jpg" alt="saiful">
+                        <img class="person-image" src="./images/avatar/saiful.jpeg" alt="saiful">
                         <div class="person-body">
                             <h4 class="heading-4 font-weight-bold">
                                 Saiful Islam
