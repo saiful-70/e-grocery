@@ -104,7 +104,7 @@
                         $search_value = $_POST["search"];
                     }
                     if($search_value != '') {
-                        $sql="SELECT * from products where id like '%$search_value%'";
+                        $sql="SELECT * from products where id like '%$search_value%' orderr by name asc";
                     } else {
                         $sql = "SELECT * FROM products";
                     }

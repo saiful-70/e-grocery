@@ -273,9 +273,9 @@ session_start();
                                 Department of ICT, <br> Comilla University
                             </p>
                             <ul class="social">
-                                <li class="social-item"><a href="https://www.facebook.com/tasmisrajahan.toma" class="social-link"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-                                <li class="social-item"><a href="#about" class="social-link"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                <li class="social-item"><a href="#about" class="social-link"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li class="social-item"><a href="https://www.facebook.com/tasmisrajahan.toma"  target = "_blank"class="social-link"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                                <li class="social-item"><a href="#about" target = "_blank" class="social-link"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                <li class="social-item"><a href="#about" target = "_blank" class="social-link"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -292,7 +292,7 @@ session_start();
                                 Department of ICT, <br> Comilla University
                             </p>
                             <ul class="social">
-                                <li class="social-item"><a href="https://www.facebook.com/saiful70.me/" class="social-link"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                                <li class="social-item"><a href="https://www.facebook.com/saiful70.me/" target = "_blank" class="social-link"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
                                 <li class="social-item"><a href="#about" class="social-link"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                                 <li class="social-item"><a href="#about" class="social-link"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                             </ul>
@@ -311,7 +311,7 @@ session_start();
                                 Department of ICT, <br> Comilla University
                             </p>
                             <ul class="social">
-                                <li class="social-item"><a href="https://www.facebook.com/saheb.babu.921230" class="social-link"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                                <li class="social-item"><a href="https://www.facebook.com/saheb.babu.921230" target = "_blank" class="social-link"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
                                 <li class="social-item"><a href="#about" class="social-link"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                                 <li class="social-item"><a href="#about" class="social-link"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                             </ul>
@@ -330,7 +330,7 @@ session_start();
                                 Department of ICT, <br> Comilla University
                             </p>
                             <ul class="social">
-                                <li class="social-item"><a href="https://www.facebook.com/mahmud.imran.90834" class="social-link"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                                <li class="social-item"><a href="https://www.facebook.com/mahmud.imran.90834" target = "_blank" class="social-link"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
                                 <li class="social-item"><a href="#about" class="social-link"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                                 <li class="social-item"><a href="#about" class="social-link"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                             </ul>
@@ -349,7 +349,7 @@ session_start();
                                 Department of ICT, <br> Comilla University
                             </p>
                             <ul class="social">
-                                <li class="social-item"><a href="https://www.facebook.com/profile.php?id=100006465457818" class="social-link"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                                <li class="social-item"><a href="https://www.facebook.com/profile.php?id=100006465457818" target = "_blank" class="social-link"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
                                 <li class="social-item"><a href="#about" class="social-link"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                                 <li class="social-item"><a href="#about" class="social-link"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                             </ul>

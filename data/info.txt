@@ -27,7 +27,7 @@ Users Database
 create TABLE users(
     image varchar(50),
     name varchar(30), 
-    email varchar(50) not null,
+    username varchar(50) not null,
     password char(30),
     PRIMARY KEY(email)
     )

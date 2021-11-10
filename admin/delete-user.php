@@ -12,7 +12,7 @@ ob_start();
         // }
         // $fileName = './uploads/products/'.$image;
 
-        $sql = "DELETE FROM users WHERE email = '$email'";
+        $sql = "DELETE FROM users WHERE username = '$email'";
         if (mysqli_query($link, $sql)) {
             // if(file_exists($fileName)) {
             //     unlink($fileName);

@@ -102,7 +102,7 @@ if(isset($_POST['submit'])){
     .wrapper {
         width : 100vw;
         height : 100vh;
-        background-image: linear-gradient(320deg, #1abc9c, #16a085);
+        background-image: linear-gradient(to bottom right, #3c6382, #0a3d62);
 
         display: flex;
         justify-content: center;
@@ -110,8 +110,8 @@ if(isset($_POST['submit'])){
     }
     .form {
         padding: 20px 30px;
-        width:450px;
-        height: 550px;
+        width:600px;
+        height: 600px;
         background-color: #FFF;
         border-radius: 15px;
         box-shadow: 0 0 10px;
@@ -158,6 +158,7 @@ if(isset($_POST['submit'])){
     <div class="wrapper">
         <div class="form">
             <h2 class="text-success font-weight-bold text-center mb-3">Sign Up</h2>
+            
             <form action="register.php" enctype="multipart/form-data" method="POST">
                 <div class="form-group <?php echo (!empty($image_err)) ? 'has-error' : ''; ?>">
                     <label class="font-weight-bold">Profile Picture</label>

@@ -12,7 +12,7 @@ ob_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>e-grocery - Sign up</title>
+    <title>e-grocery - Order</title>
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,6 +34,17 @@ ob_start();
         justify-content: center;
         align-items: center;    
     }
+    .order-success {
+        background-color: #fff;
+        display : flex;
+        flex-direction : column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 40px;
+        text-align : center;
+        border-radius : 5px;
+        color : #2c3e50;
+    }
     .form {
         padding: 20px 30px;
         width:750px;
@@ -51,12 +62,14 @@ ob_start();
         height: 40px;
     }
     .btn-reg,
-    .btn-reg:link {
+    .btn-reg:link,
+    .btn-reg:visited {
         padding: 10px 15px;
         color: #fff;
         font-weight: 700;
         border-radius: 5px;
         margin-left: 10px;
+        border: none;
     }
     </style>
 
@@ -72,14 +85,52 @@ ob_start();
                 <div class="col col-md-7">
                     <ul class="nav-bar">
                     <li class="navbar__item"> <a href="index.php" class="navbar__item--link"> Go Home </a> </li>
+                    <?php 
+
+                            $destroySessionFlag = filter_input(INPUT_POST, 'destroySession');
+                            if ($destroySessionFlag == 1) {
+                                session_destroy();
+                                header("Location: index.php");
+                                exit();
+                            }
+                            if(isset($_SESSION["username"])) {
+
+                                echo '<li class="navbar__item">';
+                                echo    '<a href="#" class="navbar__item--link">' . $_SESSION["username"] . '</a>';
+                                echo '</li>';
+
+                                echo '<li class="navbar__item">';
+                                echo '<form action="" method="POST">';
+                                    echo '<input type="hidden" name="destroySession" value="1">';
+                                    echo '<input type="submit" value="Log out" class="btn-logout"/>';
+                                echo '</form>';
+                                echo '</li>';
+                                
+                            } 
+                        ?>
                 </div>
             </nav>
         </div>
     </div>
     <div class="wrapper">
+        <?php 
+            if(isset($_SESSION["username"])) {
+        ?>
+        <div class="order-success">
+            <h2 class="font-weight-bold text-center mb-3"> 
+                Your order has been successfully placed! <br>
+            </h2>
+            <div>
+                <a href="products.php" class="btn-reg bg-success">Take more Order</a>
+                <a href="index.php" class="btn-reg bg-info">Go to homepage</a>
+            </div>
+        </div>
+        <?php
+            } 
+            else {
+        ?>
         <div class="form">
             <h2 class="text-success font-weight-bold text-center mb-3">
-            Your Order is processing. Please provide you information!
             </h2>
             <form action="index.php" method="POST" onsubmit=" alert('Order has been successfully placed!')">
                 <div class="form-group">
@@ -88,20 +139,23 @@ ob_start();
                 </div>
                 <div class="form-group">
                     <label class="font-weight-bold">Email</label>
-                    <input type="email" name="username" class="form-control"  >
+                    <input type="email" name="email" class="form-control"  >
                 </div>
                 <div class="form-group">
                     <label class="font-weight-bold">Contact</label>
-                    <input type="email" name="username" class="form-control"  >
+                    <input type="text" name="contact" class="form-control"  >
                 </div>
                 <div class="form-group">
                     <label class="font-weight-bold">Address</label>
-                    <input type="text" name="password" class="form-control" >
+                    <input type="password" name="password" class="form-control" >
                 </div>
-                <input type="submit" class="btn-reg bg-primary" value="Submit" name="submit" >
+                <input type="submit" class="btn-reg bg-success" value="Submit" name="submit" >
                 <a href="products.php" class="btn-reg bg-danger">Cancel</a>
             </form>
         </div>
+        <?php
+            }
+        ?>
     </div>
 </body>
 
