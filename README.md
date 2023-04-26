@@ -6,7 +6,7 @@
 
 ## Take a look
 
-### **[Click to Explore Live! ](http://e-grocery10.000webhostapp.com/)**
+### **[Click to Explore Live! ](https://egrocery-com.000webhostapp.com/)**
 
 </br>
 
