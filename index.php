@@ -264,16 +264,16 @@ session_start();
 
                 <div class="col-md-2">
                     <div class="person">
-                        <img class="person-image" src="./images/avatar/toma.jpeg" alt="toma">
+                        <img class="person-image" src="./images/avatar/rakib.jpg" alt="rakib">
                         <div class="person-body">
                             <h4 class="heading-4 font-weight-bold">
-                                Tasrina Jahan Toma
+                                Rakib Uddin
                             </h4>
                             <p>
                                 Department of ICT, <br> Comilla University
                             </p>
                             <ul class="social">
-                                <li class="social-item"><a href="https://www.facebook.com/tasmisrajahan.toma"  target = "_blank"class="social-link"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                                <li class="social-item"><a href="https://www.facebook.com/profile.php?id=100021893520734"  target = "_blank"class="social-link"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
                                 <li class="social-item"><a href="#about" target = "_blank" class="social-link"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                                 <li class="social-item"><a href="#about" target = "_blank" class="social-link"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                             </ul>
@@ -340,16 +340,16 @@ session_start();
 
                 <div class="col-md-2">
                     <div class="person">
-                        <img class="person-image" src="./images/avatar/alvee.jpg" alt="alvee">
+                        <img class="person-image" src="./images/avatar/shuvo.jpg" alt="shuvo">
                         <div class="person-body">
                             <h4 class="heading-4">
-                                Alvee Khandoker
+                                Mohammad Shuvo
                             </h4>
                             <p>
                                 Department of ICT, <br> Comilla University
                             </p>
                             <ul class="social">
-                                <li class="social-item"><a href="https://www.facebook.com/profile.php?id=100006465457818" target = "_blank" class="social-link"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                                <li class="social-item"><a href="https://www.facebook.com/shuvo.user22" target = "_blank" class="social-link"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
                                 <li class="social-item"><a href="#about" class="social-link"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                                 <li class="social-item"><a href="#about" class="social-link"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                             </ul>
@@ -370,7 +370,7 @@ session_start();
                         </h3>
                         <ul>
                             <li> <i class="fa fa-envelope"></i> saiful70.me@gmail.com</li>
-                            <li><i class="fa fa-phone"></i> 01234567899 </li>
+                            <li><i class="fa fa-phone"></i> 01689740070 </li>
                         </ul>
                     </div>
                 </div>
@@ -393,7 +393,7 @@ session_start();
         <div class="footer-line m-4"></div>
 
         <div class="copy-right text-center">
-            All rights reserved &copy;<a href="https://github.com/saiful-70/" class="text-success" target="_blank">E-grocery's</a> team, 2021.
+            All rights reserved &copy;<a href="https://github.com/saiful-70/e-grocery" class="text-success" target="_blank">E-grocery's</a> team, 2023.
         </div>
 
         </div>
