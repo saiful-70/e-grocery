@@ -115,6 +115,7 @@ if(isset($_POST['submit'])){
         background-color: #FFF;
         border-radius: 15px;
         box-shadow: 0 0 10px;
+        border:1px solid gray;
     }
     .form label {
         padding-left: 5px !important;

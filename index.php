@@ -39,7 +39,8 @@ session_start();
                         <li class="navbar__item"> <a href="#about" class="navbar__item--link"> About </a> </li>
                         <li class="navbar__item"> <a href="#contact" class="navbar__item--link"> Contact </a> </li>
                         <?php 
-
+                            unset($_SESSION['count']);
+                            $verify = 0;
                             $destroySessionFlag = filter_input(INPUT_POST, 'destroySession');
                             if ($destroySessionFlag == 1) {
                                 session_destroy();
@@ -47,7 +48,7 @@ session_start();
                                 exit();
                             }
                             if(isset($_SESSION["username"])) {
-
+                                $verify = 1;
                                 echo '<li class="navbar__item">';
                                 echo    '<a href="#" class="navbar__item--link">' . $_SESSION["username"] . '</a>';
                                 echo '</li>';
@@ -128,13 +129,23 @@ session_start();
             <span class="head-span"><i class="fa fa-check-circle" aria-hidden="true"></i>
                 Vegetables.</span>
             <span class="head-span"><i class="fa fa-check-circle" aria-hidden="true"></i> Fruits.</span>
-            <a href="register.php" class="btn" target="_blank">
-                Sign Up Now 
-                <!-- <i class="fa fa-shopping-cart" aria-hidden="true"></i> -->
-            </a>
+            <?php
+            if( $verify === 0)
+            {
+                echo "<a href='register.php' class='btn' target='_blank'>
+                Sign Up Now </a>";
+            }
+            else 
+            {
+                echo "<a href='#' class='btn' >
+                Sign Up Now </a>";
+            }
+           
+            ?>
         </h1>
     </header>
-
+    <div class="fluid-container responsive">
+                                    <!-- Services -->
     <section class="services" id="services">
         <div class="container">
             <div class="row">
@@ -192,7 +203,7 @@ session_start();
     </section>
     
 
-    <section class="products" id="products">
+    <section class="products h-100" id="products">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -264,16 +275,16 @@ session_start();
 
                 <div class="col-md-2">
                     <div class="person">
-                        <img class="person-image" src="./images/avatar/toma.jpeg" alt="toma">
+                        <img class="person-image" src="./images/avatar/rakib.jpg" alt="rakib">
                         <div class="person-body">
                             <h4 class="heading-4 font-weight-bold">
-                                Tasrina Jahan Toma
+                                Rakib Uddin
                             </h4>
                             <p>
                                 Department of ICT, <br> Comilla University
                             </p>
                             <ul class="social">
-                                <li class="social-item"><a href="https://www.facebook.com/tasmisrajahan.toma"  target = "_blank"class="social-link"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                                <li class="social-item"><a href="https://www.facebook.com/profile.php?id=100021893520734"  target = "_blank"class="social-link"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
                                 <li class="social-item"><a href="#about" target = "_blank" class="social-link"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                                 <li class="social-item"><a href="#about" target = "_blank" class="social-link"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                             </ul>
@@ -340,16 +351,16 @@ session_start();
 
                 <div class="col-md-2">
                     <div class="person">
-                        <img class="person-image" src="./images/avatar/alvee.jpg" alt="alvee">
+                        <img class="person-image" src="./images/avatar/shuvo.jpg" alt="shuvo">
                         <div class="person-body">
                             <h4 class="heading-4">
-                                Alvee Khandoker
+                                Ahad Hossain
                             </h4>
                             <p>
                                 Department of ICT, <br> Comilla University
                             </p>
                             <ul class="social">
-                                <li class="social-item"><a href="https://www.facebook.com/profile.php?id=100006465457818" target = "_blank" class="social-link"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                                <li class="social-item"><a href="https://www.facebook.com/shuvo.user22" target = "_blank" class="social-link"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
                                 <li class="social-item"><a href="#about" class="social-link"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                                 <li class="social-item"><a href="#about" class="social-link"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                             </ul>
@@ -359,6 +370,8 @@ session_start();
             </div>
         </div>
     </section>
+    </div>
+    
 
     <footer class="footer" id="contact">
         <div class="container">
@@ -370,7 +383,7 @@ session_start();
                         </h3>
                         <ul>
                             <li> <i class="fa fa-envelope"></i> saiful70.me@gmail.com</li>
-                            <li><i class="fa fa-phone"></i> 01234567899 </li>
+                            <li><i class="fa fa-phone"></i> 01689740070 </li>
                         </ul>
                     </div>
                 </div>

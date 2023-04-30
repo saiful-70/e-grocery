@@ -1,5 +1,12 @@
 <?php
 ob_start();
+
+session_start();
+if($_SESSION["count"] <= 0)
+{
+    header("Location: error.php");
+}
+
 // Include config file
 require_once "config.php";
  

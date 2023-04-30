@@ -1,5 +1,7 @@
 <?php
 ob_start();
+session_start();
+
 // Include config file
 require_once "config.php";
 
@@ -44,7 +46,10 @@ if(isset($_POST['login'])){
         //     }
         // }
 
-        if ($count) {
+        if ($count > 0) {
+            $_SESSION["count"] = $count;
+            // $_SESSION['password'] = 'john@example.com';
+
             header("Location: users.php");
         } else {
             header("Location: error.php");

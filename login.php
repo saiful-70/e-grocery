@@ -47,9 +47,9 @@ if(isset($_POST['login'])){
         //         echo $username;
         //     }
         // }
-
+        $name = $row['name'];
         if ($count) {
-          $_SESSION["username"] = $username;
+          $_SESSION["username"] = $name;
             header("Location: index.php");
         } else {
             header("Location: error.php");
@@ -104,7 +104,7 @@ if(isset($_POST['login'])){
                         <div class="row">
                             <div class="col-md-6 offset-md-3">
                         <input type="submit" class="btn btn-primary" value="Login" name="login">
-                        <a href="login.php" class="btn btn-danger">Back to Home</a>
+                        <a href="index.php" class="btn btn-danger">Back to Home</a>
                         </div>
                             </div>
                     </form>
