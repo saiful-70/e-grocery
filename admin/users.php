@@ -1,3 +1,10 @@
+<?php
+session_start();
+if($_SESSION["count"] <= 0)
+{
+    header("Location: error.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

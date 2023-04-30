@@ -6,7 +6,11 @@
 
 ## Take a look
 
+<<<<<<< HEAD
+<!-- ### **[Click to Explore Live! ](http://e-grocery10.000webhostapp.com/)** -->
+=======
 ### **[Click to Explore Live! ](https://egrocery-com.000webhostapp.com/)**
+>>>>>>> c8c8f781d1e99592df344342fdb900cb1a6aa3e1
 
 </br>
 

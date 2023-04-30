@@ -39,7 +39,8 @@ session_start();
                         <li class="navbar__item"> <a href="#about" class="navbar__item--link"> About </a> </li>
                         <li class="navbar__item"> <a href="#contact" class="navbar__item--link"> Contact </a> </li>
                         <?php 
-
+                            unset($_SESSION['count']);
+                            $verify = 0;
                             $destroySessionFlag = filter_input(INPUT_POST, 'destroySession');
                             if ($destroySessionFlag == 1) {
                                 session_destroy();
@@ -47,7 +48,7 @@ session_start();
                                 exit();
                             }
                             if(isset($_SESSION["username"])) {
-
+                                $verify = 1;
                                 echo '<li class="navbar__item">';
                                 echo    '<a href="#" class="navbar__item--link">' . $_SESSION["username"] . '</a>';
                                 echo '</li>';
@@ -128,13 +129,23 @@ session_start();
             <span class="head-span"><i class="fa fa-check-circle" aria-hidden="true"></i>
                 Vegetables.</span>
             <span class="head-span"><i class="fa fa-check-circle" aria-hidden="true"></i> Fruits.</span>
-            <a href="register.php" class="btn" target="_blank">
-                Sign Up Now 
-                <!-- <i class="fa fa-shopping-cart" aria-hidden="true"></i> -->
-            </a>
+            <?php
+            if( $verify === 0)
+            {
+                echo "<a href='register.php' class='btn' target='_blank'>
+                Sign Up Now </a>";
+            }
+            else 
+            {
+                echo "<a href='#' class='btn' >
+                Sign Up Now </a>";
+            }
+           
+            ?>
         </h1>
     </header>
-
+    <div class="fluid-container responsive">
+                                    <!-- Services -->
     <section class="services" id="services">
         <div class="container">
             <div class="row">
@@ -192,7 +203,7 @@ session_start();
     </section>
     
 
-    <section class="products" id="products">
+    <section class="products h-100" id="products">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -343,7 +354,7 @@ session_start();
                         <img class="person-image" src="./images/avatar/shuvo.jpg" alt="shuvo">
                         <div class="person-body">
                             <h4 class="heading-4">
-                                Mohammad Shuvo
+                                Ahad Hossain
                             </h4>
                             <p>
                                 Department of ICT, <br> Comilla University
@@ -359,6 +370,8 @@ session_start();
             </div>
         </div>
     </section>
+    </div>
+    
 
     <footer class="footer" id="contact">
         <div class="container">
@@ -393,7 +406,7 @@ session_start();
         <div class="footer-line m-4"></div>
 
         <div class="copy-right text-center">
-            All rights reserved &copy;<a href="https://github.com/saiful-70/e-grocery" class="text-success" target="_blank">E-grocery's</a> team, 2023.
+            All rights reserved &copy;<a href="https://github.com/saiful-70/" class="text-success" target="_blank">E-grocery's</a> team, 2023.
         </div>
 
         </div>
