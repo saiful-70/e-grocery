@@ -27,6 +27,9 @@
 - Now your project is ready
 - Go to **https://localhost/e-grocery** and see the output
 - For database management go to **https://localhost/e-grocery/admin** and take some **CRUD** operation.
+- admin credentials:
+  - username: **saiful**
+  - password: **admin**
 
 ## Tools used
 
